@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ajedrez</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  
+</head>
+
+<body>
+
+  <table id="tablero"></table>
+<script>
+  var fichas1 = ["fas fa-chess-rook","fas fa-chess-knight","fas fa-chess-bishop","fas fa-chess-queen","fas fa-chess-king","fas fa-chess-bishop","fas fa-chess-knight","fas fa-chess-rook"];
+var fichas2 = "fas fa-chess-pawn"; 
+
+function tablero() {
+  tablero = document.getElementById("tablero"); 
+  for(f=0; f<8; f++) {
+    var fila = tablero.insertRow(); 
+    for(c=0; c<8; c++){
+      var columna = fila.insertCell(); 
+      if(f==0) columna.innerHTML = '<span class=negras><i class="'+fichas1[c]+'"></i></span>'; 
+      else if(f==1) columna.innerHTML = '<span class=negras><i class="'+fichas2+'"></i></span>'; 
+      else if(f==6) columna.innerHTML = '<span class=blancas><i class="'+fichas2+'"></i></span>'; 
+      else if(f==7) columna.innerHTML = '<span class=blancas><i class="'+fichas1[c]+'"></i></span>'; 
+    }
+  }
+}
+
+onload = tablero;
+</script>
+
+
+
+
+</body>
+
+</html>
